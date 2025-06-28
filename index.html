@@ -1,337 +1,1568 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>41 час свободы с ИИ | Вебинар Никиты</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="author">
-                <img src="Group 3.png" alt="Никита" class="author-photo">
-                <div class="author-info">
-                    <h3>Никита</h3>
-                    <p>Эксперт по ИИ и автоматизации • 10+ лет в IT</p>
-                </div>
-            </div>
-            
-            <h1>Вебинар: "41 час свободы с ИИ"</h1>
-            <div class="event-info">
-                <span class="date">15 июня в 16:00</span>
-                <span class="format">Живой эфир в Telegram</span>
-            </div>
-            
-            <a href="https://t.me/+CXU8Ws9VzS1lOGIy" class="cta-button primary" target="_blank">
-                Присоединиться к вебинару
-            </a>
-        </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ИИ вместо вас: 7 способов работать в 3 раза меньше</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#4F46E5", secondary: "#A78BFA" },
+            borderRadius: {
+              none: "0px",
+              sm: "8px",
+              DEFAULT: "12px",
+              md: "16px",
+              lg: "20px",
+              xl: "24px",
+              "2xl": "28px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "12px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0F172A;
+      color: #F1F5F9;
+      }
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+      }
+      input[type="number"] {
+      -moz-appearance: textfield;
+      }
+      .gradient-bg {
+      background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+      }
+      .gradient-text {
+      background: linear-gradient(135deg, #A78BFA 0%, #93C5FD 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      }
+      .card-gradient {
+      background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .hero-bg {
+      background-image: url('https://readdy.ai/api/search-image?query=futuristic%2520tech%2520background%2520with%2520abstract%2520AI%2520visualization%252C%2520dark%2520blue%2520and%2520purple%2520gradient%2520with%2520glowing%2520particles%2520and%2520network%2520connections%252C%2520modern%2520digital%2520technology%2520concept%252C%2520perfect%2520for%2520AI%2520webinar%2520landing%2520page%252C%2520clean%2520design%2520with%2520space%2520for%2520text%2520on%2520left%2520side&width=1920&height=1080&seq=hero1&orientation=landscape');
+      background-size: cover;
+      background-position: center right;
+      position: relative;
+      }
+      .hero-bg::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, #0F172A 0%, #0F172A 40%, rgba(15, 23, 42, 0.85) 60%, rgba(15, 23, 42, 0.5) 80%, rgba(15, 23, 42, 0.3) 100%);
+      z-index: 1;
+      }
+      .hero-content {
+      position: relative;
+      z-index: 2;
+      }
+      .custom-checkbox {
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #A78BFA;
+      border-radius: 4px;
+      background-color: transparent;
+      position: relative;
+      cursor: pointer;
+      }
+      .custom-checkbox:checked {
+      background-color: #4F46E5;
+      border-color: #4F46E5;
+      }
+      .custom-checkbox:checked::after {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 6px;
+      width: 6px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      }
+      .custom-radio {
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #A78BFA;
+      border-radius: 50%;
+      background-color: transparent;
+      position: relative;
+      cursor: pointer;
+      }
+      .custom-radio:checked {
+      border-color: #4F46E5;
+      }
+      .custom-radio:checked::after {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #4F46E5;
+      }
+      .custom-switch {
+      position: relative;
+      display: inline-block;
+      width: 48px;
+      height: 24px;
+      }
+      .custom-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+      }
+      .switch-slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #334155;
+      transition: .4s;
+      border-radius: 24px;
+      }
+      .switch-slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+      }
+      input:checked + .switch-slider {
+      background-color: #4F46E5;
+      }
+      input:checked + .switch-slider:before {
+      transform: translateX(24px);
+      }
+      .counter-item {
+      position: relative;
+      overflow: hidden;
+      }
+            .counter-item::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, #4F46E5, #A78BFA);
+      }
+      
+      /* Анимация таймера */
+      #days, #hours, #minutes, #seconds {
+        opacity: 0;
+        transform: scale(0.8);
+        transition: all 0.3s ease-in-out;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen">
+    <!-- Навигационная панель -->
+    <header
+      class="fixed top-0 left-0 w-full z-50 bg-[#0F172A]/90 backdrop-blur-md border-b border-[#334155]"
+    >
+      <div
+        class="container mx-auto px-4 sm:px-6 py-3 flex justify-between items-center"
+      >
+        <div class="flex items-center"></div>
+        <button
+          class="bg-primary hover:bg-primary/90 text-white px-6 py-2 !rounded-button whitespace-nowrap flex items-center gap-2 transition-all"
+        >
+          <i class="ri-telegram-fill ri-lg"></i>
+          Присоединиться к вебинару
+        </button>
+      </div>
     </header>
-
-    <!-- Intro -->
-    <section class="intro">
-        <div class="container">
-            <h2>Привет! 👋</h2>
-            
-            <p>Больше 10 лет я работаю в IT-компаниях и знаю широкий спектр инструментов и сервисов. За эти годы я видел, как технологии меняют нашу жизнь, но то, что происходит с искусственным интеллектом сейчас — это настоящая революция.</p>
-            
-            <p>Еще год назад я тратил уйму времени на рутинные задачи: писал отчеты, создавал презентации, искал информацию, планировал проекты. <strong>Звучит знакомо?</strong></p>
-            
-            <div class="highlight-box">
-                <p>Потом я начал экспериментировать с ИИ. Сначала просто из любопытства — что там этот ChatGPT умеет? Но очень быстро понял: это не игрушка. Это инструмент, который может кардинально изменить то, как мы работаем и живем.</p>
+    <!-- Hero секция -->
+    <section class="hero-bg pt-24 min-h-[90vh] flex items-center">
+      <div class="container mx-auto px-4 sm:px-6 py-16 hero-content relative">
+        <div class="max-w-2xl">
+          <div
+            class="inline-flex items-center gap-2 bg-[#1E293B] px-4 py-2 rounded-full mb-6"
+          >
+            <span class="w-3 h-3 bg-primary rounded-full animate-pulse"></span>
+            <p class="text-sm font-medium">
+              Живой эфир 15 июня 2025, 16:00-17:30 МСК
+            </p>
+          </div>
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+            ИИ вместо вас:
+            <span class="gradient-text"
+              >7 способов работать в 3 раза меньше</span
+            >
+          </h1>
+          <p class="text-lg sm:text-xl text-gray-300 mb-8">
+            Практический вебинар по автоматизации рутинных задач с помощью
+            искусственного интеллекта. Экономьте до 35 часов в неделю!
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 mb-6">
+            <button
+              class="bg-primary hover:bg-primary/90 text-white px-8 py-3 !rounded-button whitespace-nowrap flex items-center justify-center gap-2 text-lg font-medium transition-all"
+            >
+              <i class="ri-telegram-fill ri-lg"></i>
+              Зарегистрироваться бесплатно
+            </button>
+            <button
+              class="border border-[#334155] hover:border-[#475569] bg-[#1E293B]/50 hover:bg-[#1E293B] px-8 py-3 !rounded-button whitespace-nowrap flex items-center justify-center gap-2 text-lg font-medium transition-all"
+            >
+              <i class="ri-calendar-line ri-lg"></i>
+              Добавить в календарь
+            </button>
+          </div>
+          <div
+            class="bg-red-500/10 border border-red-500/20 rounded-lg p-4 mb-12"
+          >
+            <p class="text-red-400 flex items-start gap-2">
+              <i class="ri-error-warning-line ri-lg mt-0.5"></i>
+              <span
+                ><span class="font-medium">ВНИМАНИЕ:</span> Мест в чате
+                ограниченно! После достижения лимита доступ будет закрыт. Не
+                откладывайте регистрацию.</span
+              >
+            </p>
+          </div>
+          <div class="flex items-center gap-6">
+            <div
+              class="w-16 h-16 rounded-full overflow-hidden border-2 border-primary flex-shrink-0"
+            >
+              <img
+                src="https://static.readdy.ai/image/ece8edffdb1f7f3c372dc75b7a4db1de/d1d78b2db822d8d004338dc1c35e7364.png"
+                alt="Никита"
+                class="w-full h-full object-cover object-center shadow-lg"
+              />
             </div>
-            
-            <div class="stats">
-                <div class="stat">
-                    <div class="number">60</div>
-                    <div class="label">часов в неделю РАНЬШЕ</div>
+            <div>
+              <h3 class="text-lg font-medium">Никита</h3>
+              <p class="text-gray-400">Эксперт по ИИ с 10+ лет опыта в IT</p>
+              <div class="flex flex-wrap gap-3 mt-3">
+                <div class="bg-[#1E293B]/50 px-3 py-1 rounded-full">
+                  <p class="text-sm">
+                    <span class="text-primary font-medium">15+</span>
+                    IT-компаний
+                  </p>
                 </div>
-                <div class="arrow">→</div>
-                <div class="stat">
-                    <div class="number">30</div>
-                    <div class="label">часов в неделю СЕЙЧАС</div>
+                <div class="bg-[#1E293B]/50 px-3 py-1 rounded-full">
+                  <p class="text-sm">
+                    <span class="text-primary font-medium">2000+</span>
+                    сэкономленных часов
+                  </p>
                 </div>
+                <div class="bg-[#1E293B]/50 px-3 py-1 rounded-full">
+                  <p class="text-sm">
+                    <span class="text-primary font-medium">50+</span> ИИ-решений
+                  </p>
+                </div>
+              </div>
             </div>
-            
-            <p><strong>Сегодня я трачу на рутину в 5-7 раз меньше времени.</strong> И это не преувеличение — у меня есть конкретные кейсы и замеры. Вместо 60-часовой рабочей недели у меня теперь 30-часовая, но продуктивность выросла в разы.</p>
+          </div>
+          <div
+            class="mt-8 p-6 bg-[#1E293B]/50 rounded-lg border border-[#334155]"
+          >
+            <p class="text-lg mb-4">
+              Привет! Больше 10 лет я работаю в IT и тестирую передовые
+              инструменты. За последний год автоматизировал большинство
+              процессов с ИИ и работаю в 3 раза эффективнее. Покажу как стать
+              таким же.
+            </p>
+            <p class="text-gray-300">
+              На вебинаре я поделюсь реальными кейсами и покажу, как
+              использовать ИИ для автоматизации рутинных задач. Вы получите
+              пошаговые инструкции и готовые промпты, которые сможете внедрить
+              уже на следующий день. Присоединяйтесь, и я помогу вам освободить
+              десятки часов в неделю для действительно важных дел!
+            </p>
+          </div>
         </div>
+      </div>
     </section>
-
-    <!-- Problem -->
-    <section class="problem">
-        <div class="container">
-            <h2>Почему я решил провести этот вебинар?</h2>
-            
-            <p>Недавно я понял страшную вещь: пока одни люди осваивают ИИ и получают суперсилы, другие продолжают работать по-старому. <strong>Разрыв между ними растет каждый день.</strong></p>
-            
-            <p>Я вижу, как мои коллеги до сих пор:</p>
-            
-            <ul class="problems-list">
-                <li><strong>Тратят 8 часов</strong> на создание презентации <span>(я делаю за 15 минут)</span></li>
-                <li><strong>Неделями ищут работу</strong> и адаптируют резюме <span>(я нахожу 50 вакансий и создаю 10 резюме за полчаса)</span></li>
-                <li><strong>Часами пишут статьи</strong> и отчеты <span>(у меня готовая статья на 3000 слов за 30 минут)</span></li>
-                <li><strong>Платят тысячи</strong> за психологов и персональных тренеров <span>(у меня есть персональный ИИ-коуч 24/7)</span></li>
-            </ul>
-            
-            <div class="conclusion">
-                <p><strong>Это несправедливо.</strong> Технологии должны помогать всем, а не только тем, кто случайно наткнулся на правильные инструменты.</p>
-                <p>Поэтому я решил поделиться своими наработками. Не в теории, а на живых примерах. Вы увидите, как за 90 минут я превращу самые затратные по времени задачи в автоматические процессы.</p>
+    <!-- Секция счетчика -->
+    <section class="py-16 bg-[#1E293B]">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-2xl sm:text-3xl font-bold mb-4">До начала вебинара осталось</h2>
+          <div class="flex justify-center gap-2 sm:gap-4 flex-wrap">
+            <div class="counter-item bg-[#0F172A] rounded-lg p-4 sm:p-6 w-20 sm:w-24">
+              <div id="days" class="text-2xl sm:text-4xl font-bold mb-1 sm:mb-2">--</div>
+              <div class="text-xs sm:text-sm text-gray-400">дней</div>
             </div>
+            <div class="counter-item bg-[#0F172A] rounded-lg p-4 sm:p-6 w-20 sm:w-24">
+              <div id="hours" class="text-2xl sm:text-4xl font-bold mb-1 sm:mb-2">--</div>
+              <div class="text-xs sm:text-sm text-gray-400">часов</div>
+            </div>
+            <div class="counter-item bg-[#0F172A] rounded-lg p-4 sm:p-6 w-20 sm:w-24">
+              <div id="minutes" class="text-2xl sm:text-4xl font-bold mb-1 sm:mb-2">--</div>
+              <div class="text-xs sm:text-sm text-gray-400">минут</div>
+            </div>
+            <div class="counter-item bg-[#0F172A] rounded-lg p-4 sm:p-6 w-20 sm:w-24">
+              <div id="seconds" class="text-2xl sm:text-4xl font-bold mb-1 sm:mb-2">--</div>
+              <div class="text-xs sm:text-sm text-gray-400">секунд</div>
+            </div>
+          </div>
         </div>
-    </section>
-
-    <!-- Cases -->
-    <section class="cases">
-        <div class="container">
-            <h2>О чем будет вебинар: 7 революционных кейсов</h2>
-            
-            <div class="cases-list">
-                <div class="case">
-                    <div class="case-header">
-                        <h3>1. Поиск работы + адаптация резюме</h3>
-                        <div class="savings">Экономия: <strong>8 часов в неделю</strong></div>
-                    </div>
-                    <p>Покажу, как за 30 минут найти 50+ релевантных вакансий и создать персонализированные резюме под каждую. Плюс сопроводительные письма и исследование компаний. То, на что обычно уходят недели.</p>
-                </div>
-                
-                <div class="case">
-                    <div class="case-header">
-                        <h3>2. Личный ИИ-психотерапевт</h3>
-                        <div class="savings">Экономия: <strong>4 часа в неделю + ментальное здоровье</strong></div>
-                    </div>
-                    <p>Настроим персонального ИИ-терапевта, который знает ваш тип личности, отслеживает настроение и дает персональные рекомендации. Доступная терапия 24/7 вместо дорогих сеансов.</p>
-                </div>
-                
-                <div class="case">
-                    <div class="case-header">
-                        <h3>3. Подсчет калорий + план питания</h3>
-                        <div class="savings">Экономия: <strong>3 часа в неделю + здоровье</strong></div>
-                    </div>
-                    <p>Сфотографировал еду — получил точный подсчет калорий. Указал цели — получил персональный план питания и список покупок. Никаких приложений и ручного ввода.</p>
-                </div>
-                
-                <div class="case">
-                    <div class="case-header">
-                        <h3>4. Персональный онлайн-репетитор</h3>
-                        <div class="savings">Экономия: <strong>6 часов в неделю + ускоренное обучение</strong></div>
-                    </div>
-                    <p>Создам ИИ-репетитора, который адаптируется под ваш стиль обучения, создает персональные планы и тестирует знания. Обучение в 10 раз быстрее обычного.</p>
-                </div>
-                
-                <div class="case">
-                    <div class="case-header">
-                        <h3>5. Быстрая подготовка статей</h3>
-                        <div class="savings">Экономия: <strong>8 часов в неделю</strong></div>
-                    </div>
-                    <p>От идеи до готовой статьи на 3000+ слов за полчаса. С исследованием, структурой, фактчекингом и оформлением. Покажу весь процесс от А до Я.</p>
-                </div>
-                
-                <div class="case">
-                    <div class="case-header">
-                        <h3>6. Создание презентаций</h3>
-                        <div class="savings">Экономия: <strong>8 часов в неделю</strong></div>
-                    </div>
-                    <p>15 минут — и у вас готовая профессиональная презентация с уникальным дизайном, контентом и даже сгенерированными изображениями. Без PowerPoint и дизайнеров.</p>
-                </div>
-                
-                <div class="case">
-                    <div class="case-header">
-                        <h3>7. Планирование недели + Life management</h3>
-                        <div class="savings">Экономия: <strong>4 часа в неделю + work-life balance</strong></div>
-                    </div>
-                    <p>Холистический подход к планированию жизни. ИИ учитывает все: работу, личные дела, здоровье, отношения. Идеальный баланс без стресса и выгорания.</p>
-                </div>
+        <div
+          class="max-w-3xl mx-auto bg-[#0F172A] rounded-lg p-8 border border-[#334155]"
+        >
+          <div class="flex flex-col md:flex-row gap-8 items-center">
+            <div class="flex-1">
+              <h3 class="text-2xl font-bold mb-4">Что вас ждет на вебинаре?</h3>
+              <ul class="space-y-3">
+                <li class="flex items-start gap-3">
+                  <div class="w-6 h-6 flex items-center justify-center mt-0.5">
+                    <i class="ri-check-line ri-lg text-primary"></i>
+                  </div>
+                  <p>7 практических кейсов автоматизации с ИИ</p>
+                </li>
+                <li class="flex items-start gap-3">
+                  <div class="w-6 h-6 flex items-center justify-center mt-0.5">
+                    <i class="ri-check-line ri-lg text-primary"></i>
+                  </div>
+                  <p>Интерактивный формат с Q&A сессией</p>
+                </li>
+                <li class="flex items-start gap-3">
+                  <div class="w-6 h-6 flex items-center justify-center mt-0.5">
+                    <i class="ri-check-line ri-lg text-primary"></i>
+                  </div>
+                  <p>Готовые шаблоны и промпты для мгновенного применения</p>
+                </li>
+                <li class="flex items-start gap-3">
+                  <div class="w-6 h-6 flex items-center justify-center mt-0.5">
+                    <i class="ri-check-line ri-lg text-primary"></i>
+                  </div>
+                  <p>Бонус: ИИ-агент для автоматизации email</p>
+                </li>
+              </ul>
             </div>
-            
-            <div class="total-savings">
-                <strong>Итого: 41+ час свободного времени каждую неделю</strong>
+            <div class="flex-1">
+              <div class="bg-[#1E293B] p-4 rounded-lg border border-[#334155]">
+                <div class="flex items-center gap-3 mb-4">
+                  <div
+                    class="w-10 h-10 rounded-full bg-red-500 flex items-center justify-center flex-shrink-0"
+                  >
+                    <i class="ri-live-line ri-lg"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-medium">Только живой эфир</h4>
+                    <p class="text-sm text-gray-400">
+                      Запись вебинара не предусмотрена
+                    </p>
+                  </div>
+                </div>
+                <p class="text-gray-300 mb-4">
+                  Присоединяйтесь к закрытому Telegram-чату, где будет проходить
+                  вебинар. Количество мест ограничено!
+                </p>
+                <button
+                  class="w-full bg-primary hover:bg-primary/90 text-white px-6 py-3 !rounded-button whitespace-nowrap flex items-center justify-center gap-2 transition-all"
+                >
+                  <i class="ri-telegram-fill ri-lg"></i>
+                  Забронировать место
+                </button>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
-
-    <!-- Bonus -->
-    <section class="bonus">
-        <div class="container">
-            <h2>🎁 Специальный бонус для участников</h2>
-            
-            <p>Каждый, кто присоединится к вебинару, получит готового ИИ-бота для управления email. Этот бот:</p>
-            
-            <ul>
-                <li>Создает краткую выжимку всех входящих писем</li>
-                <li>Автоматически удаляет спам и ненужные сообщения</li>
-                <li>Держит ваш почтовый ящик всегда чистым</li>
-                <li>Экономит до 1 часа в день на работе с почтой</li>
-            </ul>
-            
-            <p><strong>Условие получения:</strong> сделать пост со ссылкой на эту страницу о вебинаре в любой соцсети, сделать скриншот и отправить мне в личные сообщения. Я помогу вам настроить агента для работы с email.</p>
+    <!-- Секция с кейсами -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-2xl sm:text-3xl font-bold mb-4">7 кейсов автоматизации с ИИ</h2>
+          <p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto px-4">
+            Каждый кейс экономит от 3 до 8 часов в неделю. Внедрите все 7 и
+            верните себе до 35 часов!
+          </p>
         </div>
-    </section>
-
-    <!-- Details -->
-    <section class="details">
-        <div class="container">
-            <h2>⚡ Важные детали</h2>
-            
-            <div class="details-grid">
-                <div class="detail">
-                    <strong>📅 Дата:</strong> 15 июня 2025
-                </div>
-                <div class="detail">
-                    <strong>⏰ Время:</strong> 16:00-17:30 (МСК)
-                </div>
-                <div class="detail">
-                    <strong>📱 Где:</strong> В Telegram-чате
-                </div>
-                <div class="detail">
-                    <strong>🎥 Запись:</strong> НЕ будет! Только живой эфир
-                </div>
-                <div class="detail">
-                    <strong>💰 Стоимость:</strong> Бесплатно
-                </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+          <!-- Кейс 1 -->
+          <div class="card-gradient rounded-lg p-6 h-full flex flex-col">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold">SEO-статьи</h3>
+              <div
+                class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm font-medium"
+              >
+                6ч экономии
+              </div>
             </div>
-            
-            <div class="why-live">
-                <h3>Почему без записи?</h3>
-                <p>Потому что это не обычный вебинар-презентация. Это живая лаборатория, где я в реальном времени решаю ваши задачи с помощью ИИ. Буду отвечать на вопросы, адаптировать кейсы под вашу специфику, показывать дополнительные фишки.</p>
-                <p><strong>Такой формат работает только в прямом эфире.</strong> Запись убила бы всю интерактивность и ценность.</p>
+            <div class="mb-6 flex-grow">
+              <p class="text-gray-300 mb-4">
+                SEO-статьи, неотличимые от человеческих, с ключевыми словами,
+                проходящие детекторы ИИ
+              </p>
+              <div class="bg-[#1E293B] p-4 rounded-lg mb-4">
+                <div class="flex items-center gap-3 mb-2">
+                  <div
+                    class="w-8 h-8 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center flex-shrink-0"
+                  >
+                    <i class="ri-close-line ri-lg"></i>
+                  </div>
+                  <p class="text-sm text-gray-400">
+                    До: 6-8 часов на исследование и написание
+                  </p>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-8 h-8 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center flex-shrink-0"
+                  >
+                    <i class="ri-check-line ri-lg"></i>
+                  </div>
+                  <p class="text-sm text-gray-400">
+                    После: 30-40 минут с ИИ-ассистентом
+                  </p>
+                </div>
+              </div>
             </div>
+            <div class="h-40 w-full" id="chart1"></div>
+          </div>
+          <!-- Кейс 2 -->
+          <div class="card-gradient rounded-lg p-6 h-full flex flex-col">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold">ИИ-подсказчик</h3>
+              <div
+                class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm font-medium"
+              >
+                3ч экономии
+              </div>
+            </div>
+            <div class="mb-6 flex-grow">
+              <p class="text-gray-300 mb-4">
+                Мгновенные подсказки во время переговоров. Аргументы и
+                контраргументы в реальном времени
+              </p>
+              <div class="bg-[#1E293B] p-4 rounded-lg mb-4">
+                <div class="flex items-center gap-3 mb-2">
+                  <div
+                    class="w-8 h-8 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center flex-shrink-0"
+                  >
+                    <i class="ri-close-line ri-lg"></i>
+                  </div>
+                  <p class="text-sm text-gray-400">
+                    До: Долгая подготовка и упущенные возможности
+                  </p>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-8 h-8 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center flex-shrink-0"
+                  >
+                    <i class="ri-check-line ri-lg"></i>
+                  </div>
+                  <p class="text-sm text-gray-400">
+                    После: Мгновенные подсказки и +30% конверсии
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="h-40 w-full" id="chart2"></div>
+          </div>
+          <!-- Кейс 3 -->
+          <div class="card-gradient rounded-lg p-6 h-full flex flex-col">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold">Глубинные исследования</h3>
+              <div
+                class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm font-medium"
+              >
+                8ч экономии
+              </div>
+            </div>
+            <div class="mb-6 flex-grow">
+              <p class="text-gray-300 mb-4">
+                Сравню разные сервисы и подходы к поиску информации. За 20 минут
+                - исследование уровня недельной работы
+              </p>
+              <div class="bg-[#1E293B] p-4 rounded-lg mb-4">
+                <div class="flex items-center gap-3 mb-2">
+                  <div
+                    class="w-8 h-8 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center flex-shrink-0"
+                  >
+                    <i class="ri-close-line ri-lg"></i>
+                  </div>
+                  <p class="text-sm text-gray-400">
+                    До: 8-10 часов на сбор и анализ данных
+                  </p>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-8 h-8 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center flex-shrink-0"
+                  >
+                    <i class="ri-check-line ri-lg"></i>
+                  </div>
+                  <p class="text-sm text-gray-400">
+                    После: 20-30 минут на формулировку запросов
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="h-40 w-full" id="chart3"></div>
+          </div>
+          <!-- Кейс 4 -->
+          <div class="card-gradient rounded-lg p-6 h-full flex flex-col">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold">ИИ-психотерапевт</h3>
+              <div
+                class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm font-medium"
+              >
+                4ч + здоровье
+              </div>
+            </div>
+            <div class="mb-6 flex-grow">
+              <p class="text-gray-300 mb-4">
+                Персональный психотерапевт 24/7. Техники работы со стрессом,
+                тревогой и выгоранием
+              </p>
+              <div class="bg-[#1E293B] p-4 rounded-lg mb-4">
+                <div class="flex items-center gap-3 mb-2">
+                  <div
+                    class="w-8 h-8 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center flex-shrink-0"
+                  >
+                    <i class="ri-close-line ri-lg"></i>
+                  </div>
+                  <p class="text-sm text-gray-400">
+                    До: Стресс и выгорание, снижение продуктивности
+                  </p>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-8 h-8 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center flex-shrink-0"
+                  >
+                    <i class="ri-check-line ri-lg"></i>
+                  </div>
+                  <p class="text-sm text-gray-400">
+                    После: Регулярная поддержка 24/7, +40% энергии
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="h-40 w-full" id="chart4"></div>
+          </div>
+          <!-- Кейс 5 -->
+          <div class="card-gradient rounded-lg p-6 h-full flex flex-col">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold">Генерация голоса</h3>
+              <div
+                class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm font-medium"
+              >
+                5ч экономии
+              </div>
+            </div>
+            <div class="mb-6 flex-grow">
+              <p class="text-gray-300 mb-4">
+                Создание реалистичного голоса для озвучки видео и подкастов.
+                Клонирование голоса за 15 минут
+              </p>
+              <div class="bg-[#1E293B] p-4 rounded-lg mb-4">
+                <div class="flex items-center gap-3 mb-2">
+                  <div
+                    class="w-8 h-8 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center flex-shrink-0"
+                  >
+                    <i class="ri-close-line ri-lg"></i>
+                  </div>
+                  <p class="text-sm text-gray-400">
+                    До: 5+ часов на запись и редактирование
+                  </p>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-8 h-8 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center flex-shrink-0"
+                  >
+                    <i class="ri-check-line ri-lg"></i>
+                  </div>
+                  <p class="text-sm text-gray-400">
+                    После: 15 минут на генерацию готового аудио
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="h-40 w-full" id="chart5"></div>
+          </div>
+          <!-- Кейс 6 -->
+          <div class="card-gradient rounded-lg p-6 h-full flex flex-col">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold">Умное планирование</h3>
+              <div
+                class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm font-medium"
+              >
+                4ч экономии
+              </div>
+            </div>
+            <div class="mb-6 flex-grow">
+              <p class="text-gray-300 mb-4">
+                Реалистичное планирование проектов с учетом рисков. Составляем
+                план достижения личных целей и целей проектов.
+              </p>
+              <div class="bg-[#1E293B] p-4 rounded-lg mb-4">
+                <div class="flex items-center gap-3 mb-2">
+                  <div
+                    class="w-8 h-8 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center flex-shrink-0"
+                  >
+                    <i class="ri-close-line ri-lg"></i>
+                  </div>
+                  <p class="text-sm text-gray-400">
+                    До: Нереалистичные планы и постоянные срывы
+                  </p>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-8 h-8 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center flex-shrink-0"
+                  >
+                    <i class="ri-check-line ri-lg"></i>
+                  </div>
+                  <p class="text-sm text-gray-400">
+                    После: Точные оценки и +80% выполнения задач
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="h-40 w-full" id="chart6"></div>
+          </div>
+          <!-- Кейс 7 -->
+          <div
+            class="card-gradient rounded-lg p-6 h-full flex flex-col sm:col-span-2 lg:col-span-1"
+          >
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold">Анализ данных в Excel</h3>
+              <div
+                class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm font-medium"
+              >
+                5ч экономии
+              </div>
+            </div>
+            <div class="mb-6 flex-grow">
+              <p class="text-gray-300 mb-4">
+                Автоматический анализ данных без формул. Создание сложных
+                отчетов на естественном языке
+              </p>
+              <div class="bg-[#1E293B] p-4 rounded-lg mb-4">
+                <div class="flex items-center gap-3 mb-2">
+                  <div
+                    class="w-8 h-8 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center flex-shrink-0"
+                  >
+                    <i class="ri-close-line ri-lg"></i>
+                  </div>
+                  <p class="text-sm text-gray-400">
+                    До: 5+ часов на ручную обработку и анализ
+                  </p>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-8 h-8 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center flex-shrink-0"
+                  >
+                    <i class="ri-check-line ri-lg"></i>
+                  </div>
+                  <p class="text-sm text-gray-400">
+                    После: 10-15 минут на формулировку задачи для ИИ
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="h-40 w-full" id="chart7"></div>
+          </div>
         </div>
-    </section>
-
-    <!-- Survey -->
-    <section class="survey" id="survey">
-        <div class="container">
-            <h2>🔄 Что дальше?</h2>
-            
-            <p>Через месяц проведу второй вебинар с новыми кейсами. Какими именно — решите вы сами:</p>
-            
-            <form class="survey-form" id="surveyForm">
-                <div class="form-step" id="step1">
-                    <h3>Что вам интересно автоматизировать?</h3>
-                    <p>На что тратите много времени?</p>
-                    <textarea 
-                        id="automationIdea" 
-                        placeholder="Опишите задачи, которые отнимают у вас больше всего времени..."
-                        rows="4"
-                        required
-                    ></textarea>
-                    <button type="button" class="cta-button primary" onclick="nextStep()">
-                        Продолжить
-                    </button>
-                </div>
-                
-                <div class="form-step hidden" id="step2">
-                    <p>Оставьте свой контакт в Telegram - возможно, у нас уже есть готовые решения! Также пришлем приглашение на следующий вебинар по вашей теме.</p>
-                    <input 
-                        type="text" 
-                        id="telegramContact" 
-                        placeholder="@ваш_username"
-                        required
+        <div class="mt-12">
+          <div
+            class="max-w-3xl mx-auto bg-[#1E293B] rounded-lg p-8 border border-[#334155] mb-8"
+          >
+            <div class="flex items-start gap-6">
+              <div
+                class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0"
+              >
+                <i class="ri-smartphone-line ri-lg text-primary"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-4">
+                  Как участвовать в вебинаре?
+                </h3>
+                <div class="space-y-4">
+                  <div class="flex items-start gap-3">
+                    <div
+                      class="w-6 h-6 flex items-center justify-center mt-0.5"
                     >
-                    <button type="submit" class="cta-button primary">
-                        Отправить
-                    </button>
-                </div>
-                
-                <div class="form-step hidden" id="step3">
-                    <div class="success">
-                        <h3>✅ Спасибо!</h3>
-                        <p>Не забудьте присоединиться к нашему чату бесплатно</p>
-                        <a href="https://t.me/+CXU8Ws9VzS1lOGIy" class="cta-button primary" target="_blank">
-                            Присоединиться к чату
-                        </a>
+                      <i class="ri-telegram-fill text-primary"></i>
                     </div>
+                    <p>Просто присоединитесь к Telegram-чату</p>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div
+                      class="w-6 h-6 flex items-center justify-center mt-0.5"
+                    >
+                      <i class="ri-link text-primary"></i>
+                    </div>
+                    <p>За час до вебинара получите ссылку на трансляцию</p>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div
+                      class="w-6 h-6 flex items-center justify-center mt-0.5"
+                    >
+                      <i class="ri-message-3-line text-primary"></i>
+                    </div>
+                    <p>
+                      Все вопросы и общение - в этом же чате до, во время и
+                      после события
+                    </p>
+                  </div>
                 </div>
-            </form>
+              </div>
+            </div>
+          </div>
+          <div class="text-center">
+            <button
+              class="bg-primary hover:bg-primary/90 text-white px-8 py-3 !rounded-button whitespace-nowrap flex items-center justify-center gap-2 text-lg font-medium transition-all mx-auto"
+            >
+              <i class="ri-telegram-fill ri-lg"></i>
+              Зарегистрироваться на вебинар
+            </button>
+          </div>
         </div>
+      </div>
+    </section>
+    <!-- Секция бонуса -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div
+            class="bg-[#0F172A] rounded-lg overflow-hidden border border-[#334155]"
+          >
+            <div class="p-8">
+              <div class="flex flex-col md:flex-row gap-8 items-center">
+                <div class="flex-1">
+                  <div
+                    class="inline-flex items-center gap-2 bg-primary/20 text-primary px-4 py-1 rounded-full mb-4"
+                  >
+                    <i class="ri-gift-line"></i>
+                    <span class="text-sm font-medium"
+                      >🎁 Бонус для участников</span
+                    >
+                  </div>
+                  <h2 class="text-3xl font-bold mb-4">
+                    ИИ-агент для автоматизации email
+                  </h2>
+                  <p class="text-gray-300 mb-6">
+                    Персональный помощник, который возьмет на себя всю рутину
+                    работы с почтой:
+                  </p>
+                  <ul class="space-y-4 mb-8">
+                    <li
+                      class="flex items-start gap-4 bg-[#1E293B]/50 p-4 rounded-lg"
+                    >
+                      <div
+                        class="w-8 h-8 flex items-center justify-center mt-0.5 bg-primary/20 rounded-lg flex-shrink-0"
+                      >
+                        <i class="ri-mail-line ri-lg text-primary"></i>
+                      </div>
+                      <div>
+                        <h4 class="font-medium mb-1">
+                          Автоматические выжимки писем
+                        </h4>
+                        <p class="text-sm text-gray-400">
+                          Мгновенно получайте краткое содержание длинных писем.
+                          ИИ выделит главное и сэкономит время на чтение.
+                        </p>
+                      </div>
+                    </li>
+                    <li
+                      class="flex items-start gap-4 bg-[#1E293B]/50 p-4 rounded-lg"
+                    >
+                      <div
+                        class="w-8 h-8 flex items-center justify-center mt-0.5 bg-primary/20 rounded-lg flex-shrink-0"
+                      >
+                        <i class="ri-spam-2-line ri-lg text-primary"></i>
+                      </div>
+                      <div>
+                        <h4 class="font-medium mb-1">Умное удаление спама</h4>
+                        <p class="text-sm text-gray-400">
+                          Автоматическая фильтрация рекламы и спама. ИИ учится
+                          на ваших действиях и становится точнее с каждым днем.
+                        </p>
+                      </div>
+                    </li>
+                    <li
+                      class="flex items-start gap-4 bg-[#1E293B]/50 p-4 rounded-lg"
+                    >
+                      <div
+                        class="w-8 h-8 flex items-center justify-center mt-0.5 bg-primary/20 rounded-lg flex-shrink-0"
+                      >
+                        <i class="ri-reply-line ri-lg text-primary"></i>
+                      </div>
+                      <div>
+                        <h4 class="font-medium mb-1">Умные автоответы</h4>
+                        <p class="text-sm text-gray-400">
+                          ИИ проанализирует ваш стиль общения и будет отвечать
+                          на типовые письма вашим языком.
+                        </p>
+                      </div>
+                    </li>
+                    <li
+                      class="flex items-start gap-4 bg-[#1E293B]/50 p-4 rounded-lg"
+                    >
+                      <div
+                        class="w-8 h-8 flex items-center justify-center mt-0.5 bg-primary/20 rounded-lg flex-shrink-0"
+                      >
+                        <i class="ri-time-line ri-lg text-primary"></i>
+                      </div>
+                      <div>
+                        <h4 class="font-medium mb-1">Экономия времени</h4>
+                        <p class="text-sm text-gray-400">
+                          В среднем пользователи экономят 1 час в день на работе
+                          с почтой. Это 5 часов в неделю или 20 часов в месяц!
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                  <div
+                    class="bg-[#1E293B] p-6 rounded-lg mb-6 border border-[#334155]"
+                  >
+                    <h4 class="font-medium mb-3">
+                      Как получить ИИ-агента бесплатно:
+                    </h4>
+                    <ol class="space-y-3 text-gray-300 mb-6">
+                      <li class="flex items-start gap-3">
+                        <div
+                          class="w-6 h-6 flex items-center justify-center mt-0.5 bg-primary/20 rounded-full text-sm font-medium text-primary"
+                        >
+                          1
+                        </div>
+                        <p>Зарегистрируйтесь на вебинар</p>
+                      </li>
+                      <li class="flex items-start gap-3">
+                        <div
+                          class="w-6 h-6 flex items-center justify-center mt-0.5 bg-primary/20 rounded-full text-sm font-medium text-primary"
+                        >
+                          2
+                        </div>
+                        <p>Примите участие в живом эфире</p>
+                      </li>
+                      <li class="flex items-start gap-3">
+                        <div
+                          class="w-6 h-6 flex items-center justify-center mt-0.5 bg-primary/20 rounded-full text-sm font-medium text-primary"
+                        >
+                          3
+                        </div>
+                        <p>Сделайте репост анонса в любой соцсети</p>
+                      </li>
+                      <li class="flex items-start gap-3">
+                        <div
+                          class="w-6 h-6 flex items-center justify-center mt-0.5 bg-primary/20 rounded-full text-sm font-medium text-primary"
+                        >
+                          4
+                        </div>
+                        <p>Пришлите скриншот репоста в Telegram: <span class="text-primary">@volknick</span></p>
+                      </li>
+                    </ol>
+                    
+                    <div class="bg-[#0F172A] p-4 rounded-lg border border-[#334155]">
+                      <h5 class="font-medium mb-3 flex items-center gap-2">
+                        <i class="ri-share-circle-line text-primary"></i>
+                        Готовый текст для репоста:
+                      </h5>
+                      <div class="bg-[#1E293B] p-4 rounded-lg mb-4 text-sm text-gray-300">
+                        <p class="mb-3">🎓 Приглашаю на бесплатный вебинар "ИИ вместо вас: 7 способов работать в 3 раза меньше"!</p>
+                        <p class="mb-3">📅 15 июня в 16:00 МСК</p>
+                        <p class="mb-3">На вебинаре вы узнаете:</p>
+                        <p class="mb-3">
+                          ✓ 7 практических кейсов автоматизации с ИИ<br />
+                          ✓ Как экономить до 35 часов в неделю<br />
+                          ✓ Готовые инструменты и промпты
+                        </p>
+                        <p>🔗 Регистрация: https://t.me/+CXU8Ws9VzS1lOGIy</p>
+                      </div>
+                      <button
+                        id="copyText"
+                        class="w-full flex items-center justify-center gap-2 border border-[#334155] hover:border-[#475569] bg-[#1E293B] hover:bg-[#334155] px-4 py-2 !rounded-button whitespace-nowrap text-sm transition-all"
+                      >
+                        <i class="ri-clipboard-line"></i>
+                        Скопировать текст для репоста
+                      </button>
+                    </div>
+                  </div>
+                  <button
+                    class="bg-primary hover:bg-primary/90 text-white px-6 py-3 !rounded-button whitespace-nowrap flex items-center justify-center gap-2 transition-all"
+                  >
+                    <i class="ri-telegram-fill ri-lg"></i>
+                    Написать @volknick
+                  </button>
+                </div>
+                <div class="flex-1">
+                  <img
+                    src="https://readdy.ai/api/search-image?query=futuristic%2520AI%2520email%2520assistant%2520interface%2520with%2520holographic%2520display%2520showing%2520email%2520organization%2520and%2520filtering%252C%2520blue%2520and%2520purple%2520glowing%2520elements%252C%2520clean%2520modern%2520design%252C%2520dark%2520background%252C%2520high-tech%2520visualization%2520of%2520email%2520automation&width=600&height=400&seq=bonus1&orientation=landscape"
+                    alt="ИИ-агент для email"
+                    class="w-full h-auto rounded-lg"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Секция опроса -->
+    <section class="py-16 bg-[#1E293B]">
+      <div class="container mx-auto px-4">
+        <div
+          class="max-w-3xl mx-auto bg-[#0F172A] rounded-lg p-8 border border-[#334155]"
+        >
+          <h2 class="text-xl sm:text-2xl font-bold mb-6">
+            Что вы хотите автоматизировать с помощью ИИ?
+          </h2>
+          <p class="text-gray-300 mb-6">
+            Расскажите, какие задачи отнимают у вас больше всего времени, и мы
+            уделим им особое внимание на вебинаре.
+          </p>
+          <form id="surveyForm" class="space-y-6">
+            <div>
+              <textarea
+                class="w-full bg-[#1E293B] border border-[#334155] rounded-lg p-4 text-white focus:outline-none focus:border-primary resize-none"
+                rows="4"
+                placeholder="Опишите задачи, которые хотите автоматизировать..."
+              ></textarea>
+            </div>
+            <div class="flex flex-col md:flex-row gap-4">
+              <div class="flex-1">
+                <label class="block text-sm font-medium text-gray-400 mb-2"
+                  >Ваш Telegram</label
+                >
+                <div class="relative">
+                  <div
+                    class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+                  >
+                    <i class="ri-telegram-fill text-gray-400"></i>
+                  </div>
+                  <input
+                    type="text"
+                    class="w-full bg-[#1E293B] border border-[#334155] rounded-lg pl-10 p-3 text-white focus:outline-none focus:border-primary"
+                    placeholder="@username"
+                  />
+                </div>
+              </div>
+              <div class="flex-1">
+                <label class="block text-sm font-medium text-gray-400 mb-2"
+                  >Ваш Email (опционально)</label
+                >
+                <div class="relative">
+                  <div
+                    class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+                  >
+                    <i class="ri-mail-line text-gray-400"></i>
+                  </div>
+                  <input
+                    type="email"
+                    class="w-full bg-[#1E293B] border border-[#334155] rounded-lg pl-10 p-3 text-white focus:outline-none focus:border-primary"
+                    placeholder="email@example.com"
+                  />
+                </div>
+              </div>
+            </div>
+            <button
+              type="submit"
+              class="w-full bg-primary hover:bg-primary/90 text-white px-6 py-3 !rounded-button whitespace-nowrap flex items-center justify-center gap-2 transition-all"
+            >
+              Проголосовать
+            </button>
+          </form>
+        </div>
+      </div>
     </section>
 
-    <!-- Philosophy -->
-    <section class="philosophy">
-        <div class="container">
-            <h2>💭 Мое личное обращение к вам</h2>
-            
-            <blockquote>
-                Знаете, что меня больше всего поражает в ИИ? Это не технология. Это эквалайзер возможностей.
-            </blockquote>
-            
-            <p>Раньше, чтобы иметь персонального психолога, диетолога, репетитора и аналитика, нужно было быть очень богатым. <strong>Теперь все это доступно каждому за копейки.</strong></p>
-            
-            <p>Раньше, чтобы быстро создавать качественный контент, нужна была целая команда специалистов. <strong>Теперь это может делать один человек.</strong></p>
-            
-            <p>Раньше многие задачи требовали глубокой экспертизы и лет обучения. <strong>Теперь ИИ дает суперсилы любому, кто знает, как их использовать.</strong></p>
-            
-            <div class="warning">
-                <p><strong>Мы живем в уникальное время.</strong> Через 5 лет те, кто освоил ИИ сегодня, будут в совершенно другой лиге по сравнению с теми, кто этого не сделал.</p>
-                <p><strong>Я не хочу, чтобы вы остались позади. Поэтому делюсь всем, что знаю.</strong></p>
-            </div>
+    <!-- Секция голосования -->
+    <section class="py-16 bg-[#1E293B]">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-2xl sm:text-3xl font-bold mb-4">
+            Голосуйте за тему следующего вебинара
+          </h2>
+          <p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto px-4">
+            Выберите тему, которая вам наиболее интересна, и мы проведем по ней
+            следующий вебинар через месяц!
+          </p>
         </div>
+        <div class="max-w-3xl mx-auto">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div
+              class="bg-[#0F172A] rounded-lg p-4 border border-[#334155] hover:border-primary transition-all cursor-pointer"
+            >
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input
+                  type="radio"
+                  name="nextTopic"
+                  value="ai_business"
+                  class="custom-radio mt-1"
+                />
+                <div>
+                  <h4 class="font-medium">ИИ для бизнеса</h4>
+                  <p class="text-sm text-gray-400">
+                    Автоматизация бизнес-процессов и увеличение прибыли с
+                    помощью ИИ
+                  </p>
+                </div>
+              </label>
+            </div>
+            <div
+              class="bg-[#0F172A] rounded-lg p-4 border border-[#334155] hover:border-primary transition-all cursor-pointer"
+            >
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input
+                  type="radio"
+                  name="nextTopic"
+                  value="ai_content"
+                  class="custom-radio mt-1"
+                />
+                <div>
+                  <h4 class="font-medium">Создание контента с ИИ</h4>
+                  <p class="text-sm text-gray-400">
+                    Генерация текстов, изображений и видео для соцсетей и сайтов
+                  </p>
+                </div>
+              </label>
+            </div>
+            <div
+              class="bg-[#0F172A] rounded-lg p-4 border border-[#334155] hover:border-primary transition-all cursor-pointer"
+            >
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input
+                  type="radio"
+                  name="nextTopic"
+                  value="ai_personal"
+                  class="custom-radio mt-1"
+                />
+                <div>
+                  <h4 class="font-medium">Личный ИИ-ассистент</h4>
+                  <p class="text-sm text-gray-400">
+                    Настройка персонального помощника для ежедневных задач
+                  </p>
+                </div>
+              </label>
+            </div>
+            <div
+              class="bg-[#0F172A] rounded-lg p-4 border border-[#334155] hover:border-primary transition-all cursor-pointer"
+            >
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input
+                  type="radio"
+                  name="nextTopic"
+                  value="ai_coding"
+                  class="custom-radio mt-1"
+                />
+                <div>
+                  <h4 class="font-medium">Программирование с ИИ</h4>
+                  <p class="text-sm text-gray-400">
+                    Разработка сайтов и приложений без знания кода
+                  </p>
+                </div>
+              </label>
+            </div>
+            <div
+              class="bg-[#0F172A] rounded-lg p-4 border border-[#334155] hover:border-primary transition-all cursor-pointer"
+            >
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input
+                  type="radio"
+                  name="nextTopic"
+                  value="ai_education"
+                  class="custom-radio mt-1"
+                />
+                <div>
+                  <h4 class="font-medium">ИИ для обучения</h4>
+                  <p class="text-sm text-gray-400">
+                    Ускоренное изучение новых навыков и языков с помощью ИИ
+                  </p>
+                </div>
+              </label>
+            </div>
+            <div
+              class="bg-[#0F172A] rounded-lg p-4 border border-[#334155] hover:border-primary transition-all cursor-pointer"
+            >
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input
+                  type="radio"
+                  name="nextTopic"
+                  value="ai_custom"
+                  class="custom-radio mt-1"
+                />
+                <div>
+                  <h4 class="font-medium">Создание своего ИИ</h4>
+                  <p class="text-sm text-gray-400">
+                    Обучение и настройка собственных ИИ-моделей под ваши задачи
+                  </p>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="mt-8 text-center">
+            <button
+              id="voteButton"
+              class="bg-primary hover:bg-primary/90 text-white px-8 py-3 !rounded-button whitespace-nowrap flex items-center justify-center gap-2 text-lg font-medium transition-all mx-auto"
+            >
+              Проголосовать
+            </button>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Final CTA -->
-    <section class="final-cta">
-        <div class="container">
-            <h2>🚀 Присоединяйтесь прямо сейчас!</h2>
-            
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <p>Нажмите на ссылку</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <p>Присоединитесь к чату</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <p>Сделайте репост</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <p>Получите email-бота</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">5</div>
-                    <p>15 июня будьте онлайн</p>
-                </div>
+    <!-- Финальный CTA -->
+    <section class="py-16 bg-gradient-to-r from-primary to-secondary">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 text-white">
+          Готовы работать в 3 раза меньше?
+        </h2>
+        <p class="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto mb-8 px-4">
+          Присоединяйтесь к бесплатному вебинару 15 июня и узнайте, как
+          автоматизировать до 35 часов рутинной работы в неделю с помощью ИИ!
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <button
+            class="bg-white hover:bg-white/90 text-primary px-8 py-3 !rounded-button whitespace-nowrap flex items-center justify-center gap-2 text-lg font-medium transition-all"
+          >
+            <i class="ri-telegram-fill ri-lg"></i>
+            Зарегистрироваться на вебинар
+          </button>
+          <button
+            class="border border-white/30 hover:border-white/50 bg-transparent hover:bg-white/10 text-white px-8 py-3 !rounded-button whitespace-nowrap flex items-center justify-center gap-2 text-lg font-medium transition-all"
+          >
+            <i class="ri-calendar-line ri-lg"></i>
+            Добавить в календарь
+          </button>
+        </div>
+        <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-4 lg:gap-6">
+          <div class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0"
+            >
+              <i class="ri-calendar-event-line ri-lg text-white"></i>
             </div>
-            
-            <a href="https://t.me/+CXU8Ws9VzS1lOGIy" class="cta-button primary large" target="_blank">
-                Присоединиться к вебинару
+            <div class="text-left">
+              <p class="text-white font-medium">15 июня 2025</p>
+              <p class="text-white/70 text-sm">16:00-17:30 МСК</p>
+            </div>
+          </div>
+          <div class="hidden sm:block w-px h-10 bg-white/20"></div>
+          <div class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0"
+            >
+              <i class="ri-telegram-fill ri-lg text-white"></i>
+            </div>
+            <div class="text-left">
+              <p class="text-white font-medium">Telegram-чат</p>
+              <p class="text-white/70 text-sm">Интерактивный формат</p>
+            </div>
+          </div>
+          <div class="hidden sm:block w-px h-10 bg-white/20"></div>
+          <div class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0"
+            >
+              <i class="ri-live-line ri-lg text-white"></i>
+            </div>
+            <div class="text-left">
+              <p class="text-white font-medium">Только живой эфир</p>
+              <p class="text-white/70 text-sm">Без записи</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Футер -->
+    <footer class="py-8 bg-[#0F172A] border-t border-[#334155]">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-4 md:mb-0">
+            <p class="text-gray-400 text-sm">© 2025 Все права защищены</p>
+          </div>
+          <div class="flex gap-6">
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white transition-colors"
+            >
+              <div class="w-10 h-10 flex items-center justify-center">
+                <i class="ri-telegram-fill ri-lg"></i>
+              </div>
             </a>
-            
-            <div class="warning-box">
-                ⚠️ <strong>Внимание:</strong> Мест в чате ограниченное количество. После достижения лимита доступ будет закрыт.
-            </div>
-            
-            <div class="results">
-                <h3>🎯 Результат, который вы получите</h3>
-                <ul>
-                    <li>41+ час свободного времени каждую неделю</li>
-                    <li>Конкретные инструменты и промпты для каждого кейса</li>
-                    <li>Готовый email-бот для автоматизации почты</li>
-                    <li>Четкий план автоматизации вашей жизни</li>
-                    <li>Доступ к сообществу единомышленников</li>
-                    <li>Новый уровень продуктивности и качества жизни</li>
-                </ul>
-                
-                <p><strong>Это не теория.</strong> Это практические инструменты, которые вы начнете использовать уже завтра.</p>
-            </div>
-            
-            <div class="signature">
-                <p>До встречи 15 июня в 16:00!</p>
-                <p><strong>Никита</strong><br>Эксперт по ИИ и автоматизации</p>
-            </div>
-            
-            <div class="ps">
-                <p><strong>P.S.</strong> Помните: разница между теми, кто освоил ИИ, и теми, кто этого не сделал, будет только расти. Не откладывайте на потом то, что может изменить вашу жизнь уже сегодня.</p>
-            </div>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white transition-colors"
+            >
+              <div class="w-10 h-10 flex items-center justify-center">
+                <i class="ri-vk-fill ri-lg"></i>
+              </div>
+            </a>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white transition-colors"
+            >
+              <div class="w-10 h-10 flex items-center justify-center">
+                <i class="ri-instagram-fill ri-lg"></i>
+              </div>
+            </a>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white transition-colors"
+            >
+              <div class="w-10 h-10 flex items-center justify-center">
+                <i class="ri-youtube-fill ri-lg"></i>
+              </div>
+            </a>
+          </div>
         </div>
-    </section>
-
-    <script src="script.js"></script>
-</body>
-</html> 
+      </div>
+    </footer>
+    <script id="countdownScript">
+      document.addEventListener("DOMContentLoaded", function () {
+        // Установка даты вебинара: 15 июня 2025, 16:00 МСК (UTC+3)
+        // Создаем дату в формате UTC и корректируем на московское время
+        const webinarDate = new Date('2025-06-15T13:00:00.000Z'); // 16:00 МСК = 13:00 UTC
+        
+        function updateCountdown() {
+          const now = new Date();
+          const distance = webinarDate.getTime() - now.getTime();
+          
+          // Находим элементы таймера
+          const daysElement = document.getElementById("days");
+          const hoursElement = document.getElementById("hours");
+          const minutesElement = document.getElementById("minutes");
+          const secondsElement = document.getElementById("seconds");
+          
+          // Проверяем, что элементы существуют
+          if (!daysElement || !hoursElement || !minutesElement || !secondsElement) {
+            return;
+          }
+          
+          // Если время прошло
+          if (distance < 0) {
+            // Находим заголовок счетчика и меняем его
+            const countdownSection = daysElement.closest('section');
+            const countdownTitle = countdownSection ? countdownSection.querySelector('h2') : null;
+            if (countdownTitle && countdownTitle.textContent.includes('До начала вебинара осталось')) {
+              countdownTitle.textContent = 'Вебинар завершен';
+              countdownTitle.style.color = '#ef4444'; // красный цвет
+            }
+            
+            // Показываем нули
+            daysElement.textContent = "0";
+            hoursElement.textContent = "0";
+            minutesElement.textContent = "0";
+            secondsElement.textContent = "0";
+            
+            return;
+          }
+          
+          // Расчет времени
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          
+          // Обновление элементов с добавлением ведущих нулей для красоты
+          daysElement.textContent = days.toString();
+          hoursElement.textContent = hours.toString().padStart(2, '0');
+          minutesElement.textContent = minutes.toString().padStart(2, '0');
+          secondsElement.textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        // Добавляем плавное появление таймера
+        setTimeout(function() {
+          updateCountdown();
+          
+          // Добавляем класс для анимации появления
+          const timerElements = [
+            document.getElementById("days"),
+            document.getElementById("hours"), 
+            document.getElementById("minutes"),
+            document.getElementById("seconds")
+          ];
+          
+          timerElements.forEach(function(element, index) {
+            if (element) {
+              setTimeout(function() {
+                element.style.opacity = '1';
+                element.style.transform = 'scale(1)';
+              }, index * 100);
+            }
+          });
+        }, 100);
+        
+        // Запускаем обновление каждую секунду
+        const countdown = setInterval(updateCountdown, 1000);
+        
+        // Проверяем каждые 10 секунд, не истекло ли время
+        setInterval(function() {
+          const now = new Date();
+          const distance = webinarDate.getTime() - now.getTime();
+          if (distance < 0) {
+            clearInterval(countdown);
+          }
+        }, 10000);
+      });
+    </script>
+    <script id="chartsScript">
+      document.addEventListener("DOMContentLoaded", function () {
+        // Функция для создания графиков
+        function createChart(elementId, title, beforeValue, afterValue) {
+          const chartDom = document.getElementById(elementId);
+          const myChart = echarts.init(chartDom);
+          const option = {
+            animation: false,
+            tooltip: {
+              trigger: "axis",
+              backgroundColor: "rgba(255, 255, 255, 0.8)",
+              textStyle: {
+                color: "#1f2937",
+              },
+            },
+            grid: {
+              top: 10,
+              right: 10,
+              bottom: 30,
+              left: 50,
+            },
+            xAxis: {
+              type: "category",
+              data: ["До", "После"],
+              axisLine: {
+                lineStyle: {
+                  color: "#475569",
+                },
+              },
+              axisLabel: {
+                color: "#94a3b8",
+              },
+            },
+            yAxis: {
+              type: "value",
+              name: "Часы",
+              nameTextStyle: {
+                color: "#94a3b8",
+              },
+              axisLine: {
+                lineStyle: {
+                  color: "#475569",
+                },
+              },
+              axisLabel: {
+                color: "#94a3b8",
+              },
+              splitLine: {
+                lineStyle: {
+                  color: "#334155",
+                },
+              },
+            },
+            series: [
+              {
+                name: title,
+                type: "bar",
+                data: [
+                  {
+                    value: beforeValue,
+                    itemStyle: { color: "rgba(252, 141, 98, 1)" },
+                  },
+                  {
+                    value: afterValue,
+                    itemStyle: { color: "rgba(87, 181, 231, 1)" },
+                  },
+                ],
+                barWidth: "40%",
+                itemStyle: {
+                  borderRadius: 6,
+                },
+                label: {
+                  show: true,
+                  position: "top",
+                  color: "#e2e8f0",
+                },
+              },
+            ],
+          };
+          myChart.setOption(option);
+          // Обработка изменения размера окна
+          window.addEventListener("resize", function () {
+            myChart.resize();
+          });
+        }
+        // Создание графиков для каждого кейса
+        createChart("chart1", "SEO-статьи", 7, 0.6);
+        createChart("chart2", "ИИ-подсказчик", 3, 0.5);
+        createChart("chart3", "Исследования", 9, 0.5);
+        createChart("chart4", "ИИ-психотерапевт", 4, 0.3);
+        createChart("chart5", "Генерация голоса", 5, 0.25);
+        createChart("chart6", "Умное планирование", 4, 0.5);
+        createChart("chart7", "Анализ данных", 5, 0.2);
+      });
+    </script>
+    <script id="formHandlersScript">
+      document.addEventListener("DOMContentLoaded", function () {
+        // Обработчик для формы опроса
+        const surveyForm = document.getElementById("surveyForm");
+        if (surveyForm) {
+          let isFirstSubmit = true;
+          surveyForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            if (isFirstSubmit) {
+              const formData = new FormData(surveyForm);
+              const telegramField = document.createElement("div");
+              telegramField.className = "mt-6 space-y-3";
+              telegramField.innerHTML = `
+      <div class="bg-[#1E293B] p-6 rounded-lg border border-[#334155]">
+      <div class="flex items-center gap-3 mb-4">
+      <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+      <i class="ri-telegram-fill ri-lg text-primary"></i>
+      </div>
+      <div>
+      <h4 class="font-medium">Оставьте ваш контакт</h4>
+      <p class="text-sm text-gray-400">Мы уже помогли автоматизировать похожие задачи</p>
+      </div>
+      </div>
+      <div class="relative mb-4">
+      <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+      <i class="ri-telegram-fill text-gray-400"></i>
+      </div>
+      <input type="text" name="telegram" class="w-full bg-[#0F172A] border border-[#334155] rounded-lg pl-10 p-3 text-white focus:outline-none focus:border-primary" placeholder="@username" required>
+      </div>
+      <p class="text-sm text-gray-400">✓ Пришлем готовое решение если оно есть<br>✓ Приглашение на следующий вебинар<br>✓ Доступ к закрытому чату</p>
+      </div>
+      `;
+              const submitButton = surveyForm.querySelector('button[type="submit"]');
+              submitButton.parentNode.insertBefore(telegramField, submitButton);
+              submitButton.innerHTML =
+                '<i class="ri-send-plane-fill ri-lg"></i> Получить решение';
+              submitButton.classList.add("mt-6");
+              isFirstSubmit = false;
+            } else {
+              const telegramInput = surveyForm.querySelector(
+                'input[name="telegram"]',
+              );
+              if (telegramInput && telegramInput.value) {
+                const successMessage = document.createElement("div");
+                successMessage.className =
+                  "mt-6 bg-green-500/20 text-green-400 p-4 rounded-lg flex items-center gap-3";
+                successMessage.innerHTML = `
+      <i class="ri-check-line ri-lg"></i>
+      <p>Спасибо! Мы отправим вам информацию в Telegram</p>
+      `;
+                surveyForm.innerHTML = "";
+                surveyForm.appendChild(successMessage);
+              }
+            }
+          });
+        }
+        // Обработчик для кнопки копирования текста
+        const copyButton = document.getElementById("copyText");
+        if (copyButton) {
+          copyButton.addEventListener("click", function () {
+            const textToCopy = `🎓 Приглашаю на бесплатный вебинар "ИИ вместо вас: 7 способов работать в 3 раза меньше"!
+      📅 15 июня в 16:00 МСК
+      На вебинаре вы узнаете:
+      ✓ 7 практических кейсов автоматизации с ИИ
+      ✓ Как экономить до 35 часов в неделю
+      ✓ Готовые инструменты и промпты
+      🔗 Регистрация: https://t.me/+CXU8Ws9VzS1lOGIy`;
+            navigator.clipboard.writeText(textToCopy).then(function () {
+              copyButton.innerHTML = '<i class="ri-check-line"></i> Скопировано!';
+              setTimeout(function () {
+                copyButton.innerHTML =
+                  '<i class="ri-clipboard-line"></i> Скопировать текст';
+              }, 2000);
+            });
+          });
+        }
+        // Обработчик для кнопки голосования
+        const voteButton = document.getElementById("voteButton");
+        if (voteButton) {
+          voteButton.addEventListener("click", function () {
+            const selectedTopic = document.querySelector(
+              'input[name="nextTopic"]:checked',
+            );
+            if (selectedTopic) {
+              alert(
+                "Спасибо за ваш голос! Мы учтем ваше мнение при подготовке следующего вебинара.",
+              );
+            } else {
+              alert("Пожалуйста, выберите тему для следующего вебинара.");
+            }
+          });
+        }
+        // Обработчик для радио-кнопок
+        const radioButtons = document.querySelectorAll('input[type="radio"]');
+        radioButtons.forEach(function (radio) {
+          radio.addEventListener("change", function () {
+            // Сбросить стили для всех контейнеров
+            document
+              .querySelectorAll('input[name="' + this.name + '"]')
+              .forEach(function (r) {
+                r.closest(".bg-[#0F172A]").classList.remove("border-primary");
+                r.closest(".bg-[#0F172A]").classList.add("border-[#334155]");
+              });
+            // Установить стиль для выбранного контейнера
+            if (this.checked) {
+              this.closest(".bg-[#0F172A]").classList.remove("border-[#334155]");
+              this.closest(".bg-[#0F172A]").classList.add("border-primary");
+            }
+          });
+        });
+      });
+    </script>
+    <script id="scrollScript">
+      document.addEventListener("DOMContentLoaded", function () {
+        // Плавная прокрутка для всех кнопок регистрации
+        const registerButtons = document.querySelectorAll("button");
+        registerButtons.forEach(function (button) {
+          if (
+            button.textContent.includes("Зарегистрироваться") ||
+            button.textContent.includes("Присоединиться") ||
+            button.textContent.includes("Забронировать") ||
+            button.textContent.includes("Получить бонус")
+          ) {
+            button.addEventListener("click", function () {
+              // Прокрутка к форме опроса
+              const surveyForm = document.getElementById("surveyForm");
+              if (surveyForm) {
+                surveyForm.scrollIntoView({ behavior: "smooth" });
+              }
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
