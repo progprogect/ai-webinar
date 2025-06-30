@@ -226,6 +226,44 @@
         .card-gradient {
           padding: 1rem;
         }
+        
+        /* Адаптивность форм */
+        .custom-checkbox,
+        .custom-radio {
+          min-width: 20px;
+          min-height: 20px;
+        }
+        
+        /* Предотвращение переполнения текста */
+        label {
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+        }
+        
+        /* Улучшение читаемости на мобильных */
+        span, p {
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+          hyphens: auto;
+        }
+      }
+      
+      /* Дополнительная адаптивность для очень маленьких экранов */
+      @media (max-width: 480px) {
+        .grid {
+          grid-template-columns: 1fr !important;
+        }
+        
+        /* Увеличиваем отступы в формах */
+        .bg-\[#1E293B\]\/30 {
+          padding: 1rem !important;
+        }
+        
+        /* Улучшаем чекбоксы и радиобаттоны */
+        label {
+          padding: 0.75rem !important;
+          gap: 0.75rem !important;
+        }
       }
     </style>
   </head>
@@ -1065,7 +1103,7 @@
                     </p>
                     <div class="bg-yellow-500/10 p-4 rounded-lg border border-yellow-500/20">
                       <p class="text-yellow-400 font-medium text-sm">
-                        💰 <strong>Специальная цена для участников опроса:</strong> вместо 800 BYN всего 400 BYN (скидка 50%)
+                        💰 <strong>Специальная скидка для участников опроса:</strong> 50% от стоимости курса!
                       </p>
                     </div>
                   </div>
@@ -1076,39 +1114,89 @@
               <form id="courseForm" class="space-y-6">
                 <!-- Интересующие темы -->
                 <div class="bg-[#1E293B]/30 p-6 rounded-xl border border-[#334155]/50">
-                  <h4 class="text-lg font-bold mb-4">О чем вам было бы интересно узнать на курсе? Чему интересно научиться?</h4>
-                  <textarea
-                    name="topics"
-                    class="w-full bg-[#0F172A] border border-[#334155] rounded-lg p-4 text-white focus:outline-none focus:border-primary resize-none"
-                    rows="4"
-                    placeholder="Расскажите подробно, какие навыки автоматизации с ИИ вы хотели бы получить, какие задачи научиться решать..."
-                    required
-                  ></textarea>
+                  <h4 class="text-lg font-bold mb-4">Чему вам было бы интересно научиться?</h4>
+                  <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 mb-4">
+                    <label class="flex items-start gap-3 p-3 sm:p-4 bg-[#0F172A]/50 rounded-lg border border-[#334155]/30 cursor-pointer hover:border-primary/50 transition-all w-full">
+                      <input type="checkbox" name="topic_option" value="Текстовая генерация и работа с ChatGPT" class="custom-checkbox mt-0.5 flex-shrink-0">
+                      <span class="text-sm leading-relaxed">Текстовая генерация и работа с ChatGPT</span>
+                    </label>
+                    <label class="flex items-start gap-3 p-3 sm:p-4 bg-[#0F172A]/50 rounded-lg border border-[#334155]/30 cursor-pointer hover:border-primary/50 transition-all w-full">
+                      <input type="checkbox" name="topic_option" value="Создание и Обработка изображений" class="custom-checkbox mt-0.5 flex-shrink-0">
+                      <span class="text-sm leading-relaxed">Создание и Обработка изображений</span>
+                    </label>
+                    <label class="flex items-start gap-3 p-3 sm:p-4 bg-[#0F172A]/50 rounded-lg border border-[#334155]/30 cursor-pointer hover:border-primary/50 transition-all w-full">
+                      <input type="checkbox" name="topic_option" value="Генерация видео" class="custom-checkbox mt-0.5 flex-shrink-0">
+                      <span class="text-sm leading-relaxed">Генерация видео</span>
+                    </label>
+                    <label class="flex items-start gap-3 p-3 sm:p-4 bg-[#0F172A]/50 rounded-lg border border-[#334155]/30 cursor-pointer hover:border-primary/50 transition-all w-full">
+                      <input type="checkbox" name="topic_option" value="Автоматизация процессов в Excel/Google Sheets" class="custom-checkbox mt-0.5 flex-shrink-0">
+                      <span class="text-sm leading-relaxed">Автоматизация процессов в Excel/Google Sheets</span>
+                    </label>
+                    <label class="flex items-start gap-3 p-3 sm:p-4 bg-[#0F172A]/50 rounded-lg border border-[#334155]/30 cursor-pointer hover:border-primary/50 transition-all w-full">
+                      <input type="checkbox" name="topic_option" value="Создание ИИ-агентов" class="custom-checkbox mt-0.5 flex-shrink-0">
+                      <span class="text-sm leading-relaxed">Создание ИИ-агентов</span>
+                    </label>
+                    <label class="flex items-start gap-3 p-3 sm:p-4 bg-[#0F172A]/50 rounded-lg border border-[#334155]/30 cursor-pointer hover:border-primary/50 transition-all w-full">
+                      <input type="checkbox" name="topic_option" value="Разработка веб-сайтов и лендингов" class="custom-checkbox mt-0.5 flex-shrink-0">
+                      <span class="text-sm leading-relaxed">Разработка веб-сайтов и лендингов</span>
+                    </label>
+                    <label class="flex items-start gap-3 p-3 sm:p-4 bg-[#0F172A]/50 rounded-lg border border-[#334155]/30 cursor-pointer hover:border-primary/50 transition-all w-full">
+                      <input type="checkbox" name="topic_option" value="Продвинутое программирование с ИИ" class="custom-checkbox mt-0.5 flex-shrink-0">
+                      <span class="text-sm leading-relaxed">Продвинутое программирование с ИИ</span>
+                    </label>
+                    <label class="flex items-start gap-3 p-3 sm:p-4 bg-[#0F172A]/50 rounded-lg border border-[#334155]/30 cursor-pointer hover:border-primary/50 transition-all w-full">
+                      <input type="checkbox" name="topic_option" value="Создание дашбордов и визуализаций" class="custom-checkbox mt-0.5 flex-shrink-0">
+                      <span class="text-sm leading-relaxed">Создание дашбордов и визуализаций</span>
+                    </label>
+                    <label class="flex items-start gap-3 p-3 sm:p-4 bg-[#0F172A]/50 rounded-lg border border-[#334155]/30 cursor-pointer hover:border-primary/50 transition-all w-full">
+                      <input type="checkbox" name="topic_option" value="Помощь в исследованиях и написании работ" class="custom-checkbox mt-0.5 flex-shrink-0">
+                      <span class="text-sm leading-relaxed">Помощь в исследованиях и написании работ</span>
+                    </label>
+                    <label class="flex items-start gap-3 p-3 sm:p-4 bg-[#0F172A]/50 rounded-lg border border-[#334155]/30 cursor-pointer hover:border-primary/50 transition-all w-full">
+                      <input type="checkbox" name="topic_option" value="Автоматизация бизнес-процессов" class="custom-checkbox mt-0.5 flex-shrink-0">
+                      <span class="text-sm leading-relaxed">Автоматизация бизнес-процессов</span>
+                    </label>
+                  </div>
+                  
+                  <div class="mt-4">
+                    <label class="block text-sm font-medium text-gray-400 mb-2">
+                      Если не нашли выше - расскажите что вам интересно:
+                    </label>
+                    <textarea
+                      name="topics_additional"
+                      class="w-full bg-[#0F172A] border border-[#334155] rounded-lg p-4 text-white focus:outline-none focus:border-primary resize-none text-base"
+                      rows="3"
+                      placeholder="Опишите дополнительные темы, которые вас интересуют..."
+                    ></textarea>
+                  </div>
+                  
+                  <!-- Скрытое поле для совместимости с Google Apps Script -->
+                  <input type="hidden" name="topics" id="topicsHidden">
                 </div>
 
                 <!-- Формат обучения -->
                 <div class="bg-[#1E293B]/30 p-6 rounded-xl border border-[#334155]/50">
                   <h4 class="text-lg font-bold mb-4">Какой формат обучения предпочитаете?</h4>
                   <div class="space-y-3">
-                    <label class="flex items-start gap-3 p-4 bg-[#0F172A]/50 rounded-lg border border-[#334155]/30 cursor-pointer hover:border-primary/50 transition-all">
-                      <input type="radio" name="format" value="recorded" class="custom-radio mt-1">
-                      <div>
-                        <span class="font-medium">Записанные видеоуроки</span>
-                        <p class="text-sm text-gray-400 mt-1">Изучаете в удобном темпе, можете пересматривать</p>
+                    <label class="flex items-start gap-3 p-3 sm:p-4 bg-[#0F172A]/50 rounded-lg border border-[#334155]/30 cursor-pointer hover:border-primary/50 transition-all w-full">
+                      <input type="radio" name="format" value="recorded" class="custom-radio mt-1 flex-shrink-0">
+                      <div class="flex-1 min-w-0">
+                        <span class="font-medium block">Записанные видеоуроки</span>
+                        <p class="text-sm text-gray-400 mt-1 leading-relaxed">Изучаете в удобном темпе, можете пересматривать</p>
                       </div>
                     </label>
-                    <label class="flex items-start gap-3 p-4 bg-[#0F172A]/50 rounded-lg border border-[#334155]/30 cursor-pointer hover:border-primary/50 transition-all">
-                      <input type="radio" name="format" value="live" class="custom-radio mt-1">
-                      <div>
-                        <span class="font-medium">Живые онлайн-занятия с домашними заданиями</span>
-                        <p class="text-sm text-gray-400 mt-1">Интерактивность, обратная связь, разбор ваших кейсов</p>
+                    <label class="flex items-start gap-3 p-3 sm:p-4 bg-[#0F172A]/50 rounded-lg border border-[#334155]/30 cursor-pointer hover:border-primary/50 transition-all w-full">
+                      <input type="radio" name="format" value="live" class="custom-radio mt-1 flex-shrink-0">
+                      <div class="flex-1 min-w-0">
+                        <span class="font-medium block">Живые онлайн-занятия с домашними заданиями</span>
+                        <p class="text-sm text-gray-400 mt-1 leading-relaxed">Интерактивность, обратная связь, разбор ваших кейсов</p>
                       </div>
                     </label>
-                    <label class="flex items-start gap-3 p-4 bg-[#0F172A]/50 rounded-lg border border-[#334155]/30 cursor-pointer hover:border-primary/50 transition-all">
-                      <input type="radio" name="format" value="hybrid" class="custom-radio mt-1">
-                      <div>
-                        <span class="font-medium">Комбинированный формат</span>
-                        <p class="text-sm text-gray-400 mt-1">Записи + живые вебинары для вопросов и разборов</p>
+                    <label class="flex items-start gap-3 p-3 sm:p-4 bg-[#0F172A]/50 rounded-lg border border-[#334155]/30 cursor-pointer hover:border-primary/50 transition-all w-full">
+                      <input type="radio" name="format" value="hybrid" class="custom-radio mt-1 flex-shrink-0">
+                      <div class="flex-1 min-w-0">
+                        <span class="font-medium block">Комбинированный формат</span>
+                        <p class="text-sm text-gray-400 mt-1 leading-relaxed">Записи + живые вебинары для вопросов и разборов</p>
                       </div>
                     </label>
                   </div>
@@ -1118,25 +1206,25 @@
                 <div class="bg-[#1E293B]/30 p-6 rounded-xl border border-[#334155]/50">
                   <h4 class="text-lg font-bold mb-4">Какая продолжительность курса оптимальна?</h4>
                   <div class="space-y-3">
-                    <label class="flex items-start gap-3 p-4 bg-[#0F172A]/50 rounded-lg border border-[#334155]/30 cursor-pointer hover:border-primary/50 transition-all">
-                      <input type="radio" name="duration" value="2weeks_3times" class="custom-radio mt-1">
-                      <div>
-                        <span class="font-medium">2 недели по 3 занятия в неделю</span>
-                        <p class="text-sm text-gray-400 mt-1">Интенсивный формат, быстрый результат</p>
+                    <label class="flex items-start gap-3 p-3 sm:p-4 bg-[#0F172A]/50 rounded-lg border border-[#334155]/30 cursor-pointer hover:border-primary/50 transition-all w-full">
+                      <input type="radio" name="duration" value="2weeks_3times" class="custom-radio mt-1 flex-shrink-0">
+                      <div class="flex-1 min-w-0">
+                        <span class="font-medium block">2 недели по 3 занятия в неделю</span>
+                        <p class="text-sm text-gray-400 mt-1 leading-relaxed">Интенсивный формат, быстрый результат</p>
                       </div>
                     </label>
-                    <label class="flex items-start gap-3 p-4 bg-[#0F172A]/50 rounded-lg border border-[#334155]/30 cursor-pointer hover:border-primary/50 transition-all">
-                      <input type="radio" name="duration" value="4weeks_2times" class="custom-radio mt-1">
-                      <div>
-                        <span class="font-medium">4 недели по 2 занятия в неделю</span>
-                        <p class="text-sm text-gray-400 mt-1">Сбалансированный темп обучения</p>
+                    <label class="flex items-start gap-3 p-3 sm:p-4 bg-[#0F172A]/50 rounded-lg border border-[#334155]/30 cursor-pointer hover:border-primary/50 transition-all w-full">
+                      <input type="radio" name="duration" value="4weeks_2times" class="custom-radio mt-1 flex-shrink-0">
+                      <div class="flex-1 min-w-0">
+                        <span class="font-medium block">4 недели по 2 занятия в неделю</span>
+                        <p class="text-sm text-gray-400 mt-1 leading-relaxed">Сбалансированный темп обучения</p>
                       </div>
                     </label>
-                    <label class="flex items-start gap-3 p-4 bg-[#0F172A]/50 rounded-lg border border-[#334155]/30 cursor-pointer hover:border-primary/50 transition-all">
-                      <input type="radio" name="duration" value="custom" class="custom-radio mt-1">
-                      <div>
-                        <span class="font-medium">Свой вариант</span>
-                        <p class="text-sm text-gray-400 mt-1">Предложите свой формат в комментариях ниже</p>
+                    <label class="flex items-start gap-3 p-3 sm:p-4 bg-[#0F172A]/50 rounded-lg border border-[#334155]/30 cursor-pointer hover:border-primary/50 transition-all w-full">
+                      <input type="radio" name="duration" value="custom" class="custom-radio mt-1 flex-shrink-0">
+                      <div class="flex-1 min-w-0">
+                        <span class="font-medium block">Свой вариант</span>
+                        <p class="text-sm text-gray-400 mt-1 leading-relaxed">Предложите свой формат в комментариях ниже</p>
                       </div>
                     </label>
                   </div>
@@ -1147,7 +1235,7 @@
                   <h4 class="text-lg font-bold mb-4">Есть особые пожелания или вопросы?</h4>
                   <textarea
                     name="additional"
-                    class="w-full bg-[#0F172A] border border-[#334155] rounded-lg p-4 text-white focus:outline-none focus:border-primary resize-none"
+                    class="w-full bg-[#0F172A] border border-[#334155] rounded-lg p-4 text-white focus:outline-none focus:border-primary resize-none text-base"
                     rows="3"
                     placeholder="Расскажите, что ещё хотели бы изучить или какие у вас есть вопросы..."
                   ></textarea>
@@ -1156,7 +1244,7 @@
                 <!-- Контакты -->
                 <div class="bg-[#1E293B]/30 p-6 rounded-xl border border-[#334155]/50">
                   <h4 class="text-lg font-bold mb-4">Как с вами связаться?</h4>
-                  <div class="grid grid-cols-1 gap-4">
+                  <div class="space-y-4">
                     <div>
                       <label class="block text-sm font-medium text-gray-400 mb-2">
                         Telegram (предпочтительно)
@@ -1168,7 +1256,7 @@
                         <input
                           type="text"
                           name="telegram"
-                          class="w-full bg-[#0F172A] border border-[#334155] rounded-lg pl-10 p-3 text-white focus:outline-none focus:border-primary"
+                          class="w-full bg-[#0F172A] border border-[#334155] rounded-lg pl-10 p-3 text-white focus:outline-none focus:border-primary text-base"
                           placeholder="@username"
                         />
                       </div>
@@ -1184,7 +1272,7 @@
                         <input
                           type="tel"
                           name="phone"
-                          class="w-full bg-[#0F172A] border border-[#334155] rounded-lg pl-10 p-3 text-white focus:outline-none focus:border-primary"
+                          class="w-full bg-[#0F172A] border border-[#334155] rounded-lg pl-10 p-3 text-white focus:outline-none focus:border-primary text-base"
                           placeholder="Номер телефона"
                         />
                       </div>
@@ -1202,16 +1290,9 @@
                       После запуска курса вы получите уведомление с выбранной темой. 
                       Сможете решить, хотите ли использовать скидку и участвовать в обучении.
                     </p>
-                    <div class="flex items-center justify-center gap-6 text-sm">
-                      <div class="text-center">
-                        <div class="text-gray-400 line-through">800 BYN</div>
-                        <div class="text-xs text-gray-500">Обычная цена</div>
-                      </div>
-                      <div class="text-2xl text-yellow-400">→</div>
-                      <div class="text-center">
-                        <div class="text-yellow-400 font-bold text-lg">400 BYN</div>
-                        <div class="text-xs text-yellow-500">Ваша цена</div>
-                      </div>
+                    <div class="text-center">
+                      <div class="text-yellow-400 font-bold text-2xl mb-2">50% скидка</div>
+                      <div class="text-gray-300">на полную стоимость курса</div>
                     </div>
                   </div>
                 </div>
@@ -1305,50 +1386,7 @@
         </div>
       </div>
     </section>
-    <!-- Футер -->
-    <footer class="py-8 bg-[#0F172A] border-t border-[#334155]">
-      <div class="container mx-auto px-4">
-        <div class="flex flex-col md:flex-row justify-between items-center">
-          <div class="mb-4 md:mb-0">
-            <p class="text-gray-400 text-sm">© 2025 Все права защищены</p>
-          </div>
-          <div class="flex gap-6">
-            <a
-              href="#"
-              class="text-gray-400 hover:text-white transition-colors"
-            >
-              <div class="w-10 h-10 flex items-center justify-center">
-                <i class="ri-telegram-fill ri-lg"></i>
-              </div>
-            </a>
-            <a
-              href="#"
-              class="text-gray-400 hover:text-white transition-colors"
-            >
-              <div class="w-10 h-10 flex items-center justify-center">
-                <i class="ri-vk-fill ri-lg"></i>
-              </div>
-            </a>
-            <a
-              href="#"
-              class="text-gray-400 hover:text-white transition-colors"
-            >
-              <div class="w-10 h-10 flex items-center justify-center">
-                <i class="ri-instagram-fill ri-lg"></i>
-              </div>
-            </a>
-            <a
-              href="#"
-              class="text-gray-400 hover:text-white transition-colors"
-            >
-              <div class="w-10 h-10 flex items-center justify-center">
-                <i class="ri-youtube-fill ri-lg"></i>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </footer>
+
     <script id="countdownScript">
       document.addEventListener("DOMContentLoaded", function () {
         // Установка даты вебинара: 15 июля 2025, 16:00 МСК (UTC+3)
@@ -1534,11 +1572,51 @@
     </script>
     <script id="formHandlersScript">
       document.addEventListener("DOMContentLoaded", function () {
+        // Функция для обновления скрытого поля topics
+        function updateTopicsField() {
+          const checkboxes = document.querySelectorAll('input[name="topic_option"]:checked');
+          const additionalText = document.querySelector('textarea[name="topics_additional"]').value.trim();
+          const hiddenField = document.getElementById('topicsHidden');
+          
+          let selectedTopics = [];
+          checkboxes.forEach(checkbox => {
+            selectedTopics.push(checkbox.value);
+          });
+          
+          let finalTopics = '';
+          if (selectedTopics.length > 0) {
+            finalTopics = 'Выбранные темы: ' + selectedTopics.join(', ');
+          }
+          
+          if (additionalText) {
+            if (finalTopics) {
+              finalTopics += '\n\nДополнительно: ' + additionalText;
+            } else {
+              finalTopics = 'Дополнительно: ' + additionalText;
+            }
+          }
+          
+          hiddenField.value = finalTopics;
+        }
+        
+        // Добавляем обработчики для чекбоксов и дополнительного поля
+        document.querySelectorAll('input[name="topic_option"]').forEach(checkbox => {
+          checkbox.addEventListener('change', updateTopicsField);
+        });
+        
+        const additionalTextarea = document.querySelector('textarea[name="topics_additional"]');
+        if (additionalTextarea) {
+          additionalTextarea.addEventListener('input', updateTopicsField);
+        }
+
         // Обработчик для формы курса
         const courseForm = document.getElementById("courseForm");
         if (courseForm) {
           courseForm.addEventListener("submit", function (e) {
             e.preventDefault();
+            
+            // Обновляем скрытое поле перед отправкой
+            updateTopicsField();
             
             // Собираем данные формы
             const formData = new FormData(courseForm);
@@ -1552,8 +1630,11 @@
             
             // Проверяем заполнены ли интересующие темы
             const topics = formData.get('topics');
-            if (!topics || topics.trim() === '') {
-              alert('Пожалуйста, расскажите, чему хотели бы научиться на курсе');
+            const checkedTopics = document.querySelectorAll('input[name="topic_option"]:checked');
+            const additionalTopics = formData.get('topics_additional');
+            
+            if (checkedTopics.length === 0 && (!additionalTopics || additionalTopics.trim() === '')) {
+              alert('Пожалуйста, выберите хотя бы одну тему или опишите свои интересы в дополнительном поле');
               return;
             }
 
@@ -1689,6 +1770,23 @@
                   label.classList.remove('border-[#334155]/30');
                   label.classList.add('border-primary/50');
                 }
+              }
+            }
+          });
+        });
+        
+        // Обработчик для чекбоксов тем курса
+        const topicCheckboxes = document.querySelectorAll('input[name="topic_option"]');
+        topicCheckboxes.forEach(function (checkbox) {
+          checkbox.addEventListener("change", function () {
+            const label = this.closest('label');
+            if (label) {
+              if (this.checked) {
+                label.classList.remove('border-[#334155]/30');
+                label.classList.add('border-primary/50', 'bg-primary/5');
+              } else {
+                label.classList.remove('border-primary/50', 'bg-primary/5');
+                label.classList.add('border-[#334155]/30');
               }
             }
           });
